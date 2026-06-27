@@ -1,0 +1,38 @@
+@startuml
+start
+: run main.sh;
+: get log path log_manager.sh from .env;
+: load log path for each command;
+
+if (exit .env file?) then (yes)
+	: export log path;
+else (no)
+	: shoe error message;
+	: exit scripts(status1);
+	kill
+endif
+
+if ("ENV=prod") then (yes)
+	: log_dir = prod_log;
+else (no)
+	: log_dir = test_log;
+endif
+
+if (exit already a log directory?) then (yes)
+	: pass;
+else (no)
+	: create a log directory;
+endif
+
+: load choic_arith() from arith.ah;
+: choice a aritmetic via input number(1: add, 2: sub, 3: mul, 4: div);
+: execute input_term() from digit_controller.sh;
+: input number of term;
+: input digits for each term;
+: load calc() from arith.sh;
+: calculate;
+: show the calulate result;
+: save log;
+stop
+@enduml
+
