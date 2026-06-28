@@ -27,7 +27,7 @@ if (exist already a log directory?) then (yes)
 else (no)
 	: create a log directory;
 endif
-: load input_term() from digit_controller.sh;
+: load input_numOfTerm() from term_controller.sh;
 
 
 repeat
@@ -52,6 +52,7 @@ endswitch
 backward: loop back to input_term; 
 repeat while(input_term is other) is (yes) not (1, 2, 3);
 
+: load input_digit() from digit_controller.sh
 : input digits for each term;
 
 : load choic_arith() from arith.ah;

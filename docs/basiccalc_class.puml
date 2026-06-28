@@ -1,0 +1,26 @@
+@startuml
+	class "main.sh" as main {
+		+ main()
+	}
+	class "log_manager.sh" as log {
+		- get_logdir()
+	}
+	class "term_controller.sh" as term {
+		- input_numOfTerm()
+	} 
+	class "digit_controller.sh" as digit {
+		- input_digit()
+	}
+	class "arith.sh" as arith {
+		+ calc()
+		- add()
+		- sub()
+		- mul()
+		- div()
+	}
+
+main --> log: import method.check and get log_dir.
+arith --> term: import method and get nuber of term.
+arith --> digit: import method and get inputted digit.
+main --> arith: import method and get calculate result.
+@enduml
