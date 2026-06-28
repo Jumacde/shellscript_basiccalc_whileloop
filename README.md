@@ -17,4 +17,5 @@ training basic calclator by while loop
             - control the input digit and number of term.
     6. "arith.sh": 
             - set functions for 4 basic calculate(add, sub, mul, div) and they are include by a finction.
-            - user can choose a arithmetic operation using by input a number(1: add, 2: sub, 3: mul, 4:div).
+            - user can choose a arithmetic operation using by input a number(1: add, 2: sub, 3: mul, 4:div, 0:end scripts).
+            - if you user choosen't 1,2,3,4 or 0 then they are asked again.
