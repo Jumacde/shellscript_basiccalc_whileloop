@@ -51,7 +51,8 @@ case(other)
 endswitch
 backward: loop back to input_term; 
 repeat while(input_term is other) is (yes) not (1, 2, 3);
-:save log and show inputted term;
+: place digit in each term; 
+: save log and show inputted term;
 
 
 : load input_digit() from digit_controller.sh
@@ -59,10 +60,12 @@ repeat while(input_term is other) is (yes) not (1, 2, 3);
 : save log and show inputted term;
 
 : load choic_arith() from arith.ah;
+: load number of term from term_controller.sh;
+: load choice_arith() from arith.sh;
 repeat
 : choice a aritmetic via input number;
 note right
-1: add, 2: sub, 3:mul, 0: end
+1: add, 2: sub, 3: mul, 0: exit
 end note
 
 switch ("$choice_arith" is  1, 2, 3, 4, 0 or other)
@@ -84,8 +87,7 @@ backward: loop back to choice_arith();
 repeat while(choice_arith is other) is (yes) not (1, 2, 3, 4);
 :save log and show the choosen arithmetic operation;
 
-: execute input_term() from digit_controller.sh;
-: load calc() from arith.sh;
+: get placed digits in each term;
 : calculate;
 : show the calulate result;
 : save log;

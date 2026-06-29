@@ -5,7 +5,7 @@ package "Application_Layer" {
 	component [term_controller.sh] as term
 	component [arith.sh] as arith
 	arith .> term << get num of term >>
-	arith .> digit << get digits to calculate >> 
+	arith .> digit << get digits and place they in each term >> 
 	main .> arith << load function >>
 }
 

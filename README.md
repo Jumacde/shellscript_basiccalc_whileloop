@@ -18,6 +18,7 @@ training basic calclator by while loop
             - if user input 0 exit scripts.
     6. "digit_controller.sh": 
             - control the input digit.
+            - digits are placed in each term.
     7. "arith.sh": 
             - set functions for 4 basic calculate(add, sub, mul, div) and they are include by a finction.
             - user can choose a arithmetic operation using by input a number(1: add, 2: sub, 3: mul, 4:div, 0:end scripts).
