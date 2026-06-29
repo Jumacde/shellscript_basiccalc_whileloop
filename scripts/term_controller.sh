@@ -13,7 +13,7 @@ input_numOfTerm() {
 		read numOfTerm
 		echo "your inputted number of term is $numOfTerm" | tee -a "$log_dir"
 
-		if [ "$numOfTerm" == "0" ]
+		if [ "$numOfTerm" == "0" ]; then
 			exit 0
 		fi
 	done
