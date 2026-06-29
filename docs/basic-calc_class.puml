@@ -19,8 +19,8 @@
 		- div()
 	}
 
-main --> log: import method.check and get log_dir.
-arith --> term: import method and get nuber of term.
-arith --> digit: import method and get inputted digit.
-main --> arith: import method and get calculate result.
+main ..> log: import method.check and get log_dir.
+arithh ..> term: import method and get nuber of term.
+arith ..> digit: import method and get inputted digit.
+main ..> arith: import method and get calculate result.
 @enduml
