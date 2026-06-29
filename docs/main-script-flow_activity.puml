@@ -51,9 +51,12 @@ case(other)
 endswitch
 backward: loop back to input_term; 
 repeat while(input_term is other) is (yes) not (1, 2, 3);
+:save log and show inputted term;
+
 
 : load input_digit() from digit_controller.sh
 : input digits for each term;
+: save log and show inputted term;
 
 : load choic_arith() from arith.ah;
 repeat
@@ -77,8 +80,9 @@ case (0)
 case (other)
 	: invalid input \n(ask again);
 endswitch
-backward: loop back to input_digit;
+backward: loop back to choice_arith();
 repeat while(choice_arith is other) is (yes) not (1, 2, 3, 4);
+:save log and show the choosen arithmetic operation;
 
 : execute input_term() from digit_controller.sh;
 : load calc() from arith.sh;

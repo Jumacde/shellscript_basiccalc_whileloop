@@ -26,5 +26,9 @@ package "Log_Layer" {
 
 main -down-> testlog: << write  >> (Development)
 main -down-> prodlog: << write  >> (Production)
+term -down-> testlog: << write  >> (Development)
+term -down-> prodlog: << write  >> (Production)
+digit -down-> testlog: << write  >> (Development)
+digit -down-> prodlog: << write  >> (Production)
 
 @enduml
