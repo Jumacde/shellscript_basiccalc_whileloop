@@ -1,0 +1,11 @@
+@startuml
+start
+: run main.sh;
+
+!include get-logpath_process.puml
+!include input-term_process.puml
+!include input-digit_process.puml 
+!include calc_process.puml
+
+stop
+@enduml

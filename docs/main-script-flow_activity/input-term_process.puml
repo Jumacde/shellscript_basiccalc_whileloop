@@ -1,0 +1,29 @@
+partition term_controller.sh {
+
+	: load input_numOfTerm() from term_controller.sh;
+
+	repeat
+	: input number of terms; 
+	note right
+	number of term can be bet wenn 1 and 3
+	end note
+
+	switch("$input_term" is 1, 2, 3, 0 or other)
+	case( 1)
+		: add one term;
+	case( 2)
+		: add two terms;
+	case( 3)
+		: add three terms;
+	case( 0)
+		: exit scripts(status1);
+		detach
+	case( other)
+		: invalid input \n (ask again);
+	endswitch
+	backward: loop back to input_term; 
+	repeat while(input_term is other) is (yes) not ( 1, 2, 3);
+	: save log and show inputted term;
+
+}
+

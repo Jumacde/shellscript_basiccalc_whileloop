@@ -1,0 +1,7 @@
+partition digit_controller.sh {
+	: load input_digit() from digit_controller.sh
+	: input digits for each term;
+	: save log and show inputted term;
+	: place digit in each term; 
+
+}

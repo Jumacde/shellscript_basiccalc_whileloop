@@ -1,0 +1,33 @@
+partition arith.sh {
+	: load choic_arith() from arith.ah;
+	: load number of term from term_controller.sh;
+	: load choice_arith() from arith.sh;
+	repeat
+	: choice a aritmetic via input number;
+	note right
+	1: add, 2: sub, 3: mul, 0: exit
+	end note
+
+	switch ("$choice_arith" is  1, 2, 3, 4, 0 or other)
+	case ( 1)
+		: add();
+	case ( 2)
+		: sub();
+	case ( 3)
+		: mul();
+	case ( 4)
+		: div();
+	case ( 0)
+		: exit scripts(status1);
+		detach
+	case ( other)
+		: invalid input \n(ask again);
+	endswitch
+	backward: loop back to choice_arith();
+	repeat while(choice_arith is other) is ( yes) not ( 1, 2, 3, 4);
+	: save log and show the choosen arithmetic operation;
+	: calculate;
+	: show the calulate result;
+	: save log;
+}
+

@@ -4,6 +4,9 @@ training basic calclator by while loop
 - target this prokjects
     check basic while-loop by shellscript.
 
+- activity diagram is in the directory " main-script-flow_activity".
+    - main.puml
+
 - structure this projects
     1. "main.sh": 
             - load and execute all functions from other scripts.
