@@ -1,6 +1,8 @@
 #!/bin/bash
-
+source "$(dirname "$0")/log_manager.sh"
+source "$(dirname "$0")/arith.sh"
 main() {
- echo "test"
+	get_logdir()
+	choose_arith()
 }
 main
