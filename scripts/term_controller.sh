@@ -4,10 +4,8 @@ source "$(dirname "$0")/log_manager.sh"
 numOfTerm=""
 
 input_numOfTerm() {
-	while [ "$numOfTerm" != "0" ] \ 
-		&& [ "$numOfTerm" != "1" ] \
-	       	&& [ "$numOfTerm" != "2" ] \
-		&& [ "$numOfTerm" != "3" ]
+	while [ "$numOfTerm" != "0" 
+		-a "$numOfTerm" != "1" -a "$numOfTerm" != "2" -a "$numOfTerm" != "3" ]
 	do
 		echo "input number of term:"
 		read numOfTerm
