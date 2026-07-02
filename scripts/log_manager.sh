@@ -15,7 +15,7 @@ log_dir=""
 
 get_logdir() {
 	# log dir for prod enviroment.
-	if [ "${ENV} = prod" ]; then
+	if [ "${ENV}" = "prod" ]; then
 		log_dir="${prod_log}"
 	else
 		# log dir to test enviroment.
