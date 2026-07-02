@@ -44,11 +44,7 @@ div(){
 choose_arith(){
 	# 1. choose a arithmetic operarion.
 	local choice=""
-	while [ "$choice" != "0" 
-		-a "$choice" != "1" 
-		-a "$choice" != "2" 
-		-a "$choice" != "3"
-	      	-a "$choice" != "4" ] do
+	while [[ ! "$choice" =~ ^[0-4]$ ]]; do
 		echo "choose a arithmetic operation/n1:add, 2:sub, 3:mul, 4:div, 0:exit"
 		read choice
 		echo "you selected $choice" | tee -a "$log_dir"

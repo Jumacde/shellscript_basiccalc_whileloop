@@ -19,4 +19,4 @@ input_all_digits() {
 		input_digit
 		digits+=("$digit")
 	done
-
+}
