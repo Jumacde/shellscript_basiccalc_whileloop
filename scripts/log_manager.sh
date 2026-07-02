@@ -22,5 +22,5 @@ get_logdir() {
 		log_dir="${test_log}"
 	fi
 	# create a new directory for log file.
-	mkdir -p "$(dirname "log_dir")"
+	mkdir -p "$(dirname "$log_dir")"
 }

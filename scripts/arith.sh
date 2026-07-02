@@ -5,26 +5,26 @@ source "$(dirname "$0")/log_manager.sh"
 
 add(){
 	case "$numOfTerm" in 
-		1) result=${digits[0]} + ${digits[1]};;
-		2) result=${digits[0]} + ${digits[1]} + ${digits[2]};;
-		3) result=${digits[0]} + ${digits[1]} + ${digits[2]} + ${digits[3]};; 
+		1) result=$((${digits[0]} + ${digits[1]}));;
+		2) result=$((${digits[0]} + ${digits[1]} + ${digits[2]}));;
+		3) result=$(({${digits[0]} + ${digits[1]} + ${digits[2]} + ${digits[3]}));; 
 	esac
 	echo "result: $result" | tee -a "$log_dir"	
 }
 sub(){        
 	case "$numOfTerm" in
-		1) result=${digits[0]} - ${digits[1]};;   
-		2) result=${digits[0]} - ${digits[1]} - ${digits[2]};;
-		3) result=${digits[0]} - ${digits[1]} - ${digits[2]} - ${digits[3]};;
+		1) result=$((${digits[0]} - ${digits[1]}));;   
+		2) result=$((${digits[0]} - ${digits[1]} - ${digits[2]}));;
+		3) result=$((${digits[0]} - ${digits[1]} - ${digits[2]} - ${digits[3]}));;
         esac
 	echo "result: $result" | tee -a "$log_dir"
 }
 
 mul(){
         case "$numOfTerm" in
-		1) result=${digits[0]} * ${digits[1]};;
-		2) result=${digits[0]} * ${digits[1]} * ${digits[2]};;
-		3) result=${digits[0]} * ${digits[1]} * ${digits[2]} * ${digits[3]};;
+		1) result=$((${digits[0]} * ${digits[1]}));;
+		2) result=$((${digits[0]} * ${digits[1]} * ${digits[2]}));;
+		3) result=$((${digits[0]} * ${digits[1]} * ${digits[2]} * ${digits[3]}));;
         esac
 	echo "result: $result" | tee -a "$log_dir"
 }
@@ -33,9 +33,9 @@ div(){
 	# 0 checker
 	if [ "$input_all_digit" -eq 0 ]; then
         	case "$numOfTerm" in
-			1) result=${digits[0]} / ${digits[1]};;
-			2) result=${digits[0]} / ${digits[1]} / ${digits[2]};;
-                	3) result=${digits[0]} / ${digits[1]} / ${digits[2]} / ${digits[3]};;
+			1) result=$((${digits[0]} / ${digits[1]}));;
+			2) result=$((${digits[0]} / ${digits[1]} / ${digits[2]}));;
+			3) result=$((${digits[0]} / ${digits[1]} / ${digits[2]} / ${digits[3]}));;
         	esac
 	fi
 	echo "result: $result" | tee -a "$log_dir"
