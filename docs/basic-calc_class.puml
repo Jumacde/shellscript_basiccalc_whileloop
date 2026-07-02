@@ -3,13 +3,13 @@
 		+ main()
 	}
 	class "log_manager.sh" as log {
-		- get_logdir()
+		+ get_logdir()
 	}
 	class "term_controller.sh" as term {
-		- input_numOfTerm()
+		+ input_numOfTerm()
 	} 
 	class "digit_controller.sh" as digit {
-		- input_digit()
+		+ input_digit()
 		+ input_all_digit()
 	}
 	class "arith.sh" as arith {
