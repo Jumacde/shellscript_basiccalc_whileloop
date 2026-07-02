@@ -3,42 +3,55 @@ source "$(dirname "$0")/term_controller.sh"
 source "$(dirname "$0")/digit_controller.sh"
 source "$(dirname "$0")/log_manager.sh"
 
+# expr is step of calculatiton
 add(){
 	case "$numOfTerm" in 
-		1) result=$((${digits[0]} + ${digits[1]}));;
-		2) result=$((${digits[0]} + ${digits[1]} + ${digits[2]}));;
-		3) result=$(({${digits[0]} + ${digits[1]} + ${digits[2]} + ${digits[3]}));; 
+		1) result=$((${digits[0]} + ${digits[1]}));
+			expr="${digits[0]} + ${digits[1]}";;
+		2) result=$((${digits[0]} + ${digits[1]} + ${digits[2]}));
+			expr="${digits[0]} + ${digits[1]} + ${digits[2]}";;
+		3) result=$((${digits[0]} + ${digits[1]} + ${digits[2]} + ${digits[3]}));
+		       expr="${digits[0]} + ${digits[1]} + ${digits[2]} + ${digits[3]}";;
 	esac
-	echo "result: $result" | tee -a "$log_dir"	
+	echo "result: $expr = $result" | tee -a "$log_dir"	
 }
 sub(){        
 	case "$numOfTerm" in
-		1) result=$((${digits[0]} - ${digits[1]}));;   
-		2) result=$((${digits[0]} - ${digits[1]} - ${digits[2]}));;
-		3) result=$((${digits[0]} - ${digits[1]} - ${digits[2]} - ${digits[3]}));;
+		1) result=$((${digits[0]} - ${digits[1]}));
+			expr="${digits[0]} - ${digits[1]}";;	
+		2) result=$((${digits[0]} - ${digits[1]} - ${digits[2]}));
+			expr="${digits[0]} - ${digits[1]} - ${digits[2]}";;
+		3) result=$((${digits[0]} - ${digits[1]} - ${digits[2]} - ${digits[3]}));
+			expr="${digits[0]} - ${digits[1]} - ${digits[2]} - ${digits[3]}";;
         esac
-	echo "result: $result" | tee -a "$log_dir"
+	echo "result: $expr = $result" | tee -a "$log_dir"
 }
 
 mul(){
         case "$numOfTerm" in
-		1) result=$((${digits[0]} * ${digits[1]}));;
-		2) result=$((${digits[0]} * ${digits[1]} * ${digits[2]}));;
-		3) result=$((${digits[0]} * ${digits[1]} * ${digits[2]} * ${digits[3]}));;
+		1) result=$((${digits[0]} * ${digits[1]}));
+			expr="${digits[0]} * ${digits[1]}";;
+		2) result=$((${digits[0]} * ${digits[1]} * ${digits[2]}));
+			expr="${digits[0]} * ${digits[1]} * ${digits[2]}";;
+		3) result=$((${digits[0]} * ${digits[1]} * ${digits[2]} * ${digits[3]}));
+			expr="${digits[0]} * ${digits[1]} * ${digits[2]} * ${digits[3]}";;
         esac
-	echo "result: $result" | tee -a "$log_dir"
+	echo "result: $expr = $result" | tee -a "$log_dir"
 }
 
 div(){
 	# 0 checker
 	if [ "$input_all_digit" -eq 0 ]; then
         	case "$numOfTerm" in
-			1) result=$((${digits[0]} / ${digits[1]}));;
-			2) result=$((${digits[0]} / ${digits[1]} / ${digits[2]}));;
-			3) result=$((${digits[0]} / ${digits[1]} / ${digits[2]} / ${digits[3]}));;
+			1) result=$((${digits[0]} / ${digits[1]}));
+				expr="${digits[0]} / ${digits[1]}";;
+			2) result=$((${digits[0]} / ${digits[1]} / ${digits[2]}));
+				expr="${digits[0]} / ${digits[1]} / ${digits[2]}";;
+			3) result=$((${digits[0]} / ${digits[1]} / ${digits[2]} / ${digits[3]}));
+				expr="${digits[0]} / ${digits[1]} / ${digits[2]} / ${digits[3]}";;
         	esac
 	fi
-	echo "result: $result" | tee -a "$log_dir"
+	echo "result: $expr = $result" | tee -a "$log_dir"
 }
 
 choose_arith(){
@@ -55,6 +68,7 @@ choose_arith(){
 		fi
 	done
 	# 2. calulate by the choosen arithmetic operation.
+	input_numOfTerm
 	input_all_digits
 	case "$choice" in
 		1) add ;;
