@@ -4,8 +4,9 @@ package "Application_Layer" {
 	component [digit_controller.sh] as digit
 	component [term_controller.sh] as term
 	component [arith.sh] as arith
+	digit .> term << get num of term and place digit >>
 	arith .> term << get num of term >>
-	arith .> digit << get digits and place they in each term >> 
+	arith .> digit << get digits >> 
 	main .> arith << load function >>
 }
 

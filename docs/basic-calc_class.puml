@@ -22,7 +22,8 @@
 
 main ..> log: check and get log_dir.
 arith ..> term: get nuber of term.
-arith ..> digit: get inputted digit and place digit in each term.
+arith ..> digit: get inputted digit.
+digit ..> term: get lang of term to create array and place digits in each array.
 main ..> arith: get calculate result.
 term ..> log: import log path and save log.
 digit ..> log: import log path and save log. 
